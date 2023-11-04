@@ -17,7 +17,7 @@ pygame.display.set_caption("My First Pygame Program")
 
 # 设置小球的初始位置和速度
 ball_pos = [400, 300]
-ball_speed = [2, 2]
+ball_speed = [2, 1]
 
 # 创建计时器对象
 clock = pygame.time.Clock()
@@ -48,7 +48,7 @@ while True:
     screen.fill((0, 0, 0))
 
     # 绘制小球
-    pygame.draw.circle(screen, (255, 255, 255), ball_pos, 20)
+    pygame.draw.circle(screen, (255, 255, 0), ball_pos, 10)
 
     # 更新屏幕
     pygame.display.flip()

@@ -64,8 +64,7 @@ while True:
     if ball_pos[0] > window_size[0] or ball_pos[0] < 0:
         ball_speed[0] = -ball_speed[0]
         # ball_speed[0] = 0
-        ball_color = (random.randint(0, 255), random.randint(
-            0, 255), random.randint(0, 255))
+        ball_color = (random.randint(0, 255), 0, random.randint(0, 255))
 
     if ball_pos[1] > window_size[1] or ball_pos[1] < 0:
         ball_speed[1] = -ball_speed[1]
