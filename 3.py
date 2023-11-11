@@ -37,10 +37,25 @@ def rename_and_move_files(src_folder, dest_folder):
             new_file_name = new_base_name + ext  # 重新组合文件名和扩展名
             src_file_path = os.path.join(src_folder, file_name)
             dest_file_path = os.path.join(dest_folder, new_file_name)
-            shutil.move(src_file_path, dest_file_path)  # 移动文件
+            print(dest_file_path)
+            if os.path.exists(dest_file_path):
+                print('存在了')
+            else:
+                shutil.move(src_file_path, dest_file_path)  # 移动文件
 
 
-# 使用方法
-src_folder = '/Users/wangdaodao/Music'  # 请替换为你的源文件夹路径
-dest_folder = '/Users/wangdaodao/Music/1'  # 请替换为你的目标文件夹路径
-rename_and_move_files(src_folder, dest_folder)
+
+f_path = '/Users/wangdaodao/日语学习/语法'
+for a, b, c in os.walk(f_path):
+        for aa in c:
+            if '.' not in aa:
+                old_name = '{}/{}'.format(f_path, aa)
+                new_name = '{}/{}.mp4'.format(f_path, aa)
+                print(old_name, new_name)
+                os.rename(old_name, new_name)
+            elif '①' not in aa:
+                old_name = '{}/{}'.format(f_path, aa)               
+                new_name = '{}/①{}'.format(f_path, aa)
+                os.rename(old_name, new_name)
+                print(old_name, new_name)
+            

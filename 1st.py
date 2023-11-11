@@ -14,7 +14,7 @@ pygame.display.set_caption('my first game')
 
 
 ball_pos = [50, 50]
-ball_speed = [0, 0]
+ball_speed = [4, 5]
 # print(ball_speed)
 ball_color = (255, 0, 0)
 circle_radius = 8
@@ -64,18 +64,18 @@ while True:
     if ball_pos[0] > window_size[0] or ball_pos[0] < 0:
         ball_speed[0] = -ball_speed[0]
         # ball_speed[0] = 0
-        ball_color = (random.randint(0, 255), 0, random.randint(0, 255))
+        ball_color = (random.randint(0, 255), 0, 0)
 
     if ball_pos[1] > window_size[1] or ball_pos[1] < 0:
         ball_speed[1] = -ball_speed[1]
-        ball_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
+        c_one, c_two, c_three = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+        ball_color = (c_one, c_two, c_three)
 
     screen.fill((0, 0, 0))
 
-    # text_surface = font.render('{},{}'.format(ball_pos[0], ball_pos[1]), True, (255, 255, 255))
+    text_surface = font.render('{}'.format(ball_color), True, (255, 255, 255))
 
-    # screen.blit(text_surface, (ball_pos[0]+2, ball_pos[1]+4))
+    screen.blit(text_surface, (ball_pos[0]+2, ball_pos[1]+4))
 
     pygame.draw.circle(screen, ball_color, ball_pos, circle_radius)
 
